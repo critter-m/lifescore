@@ -1,8 +1,14 @@
 package com.critterm.lifescore.tastes;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Tastes {
 
+    @Id
+    private Long id = 1L;
     private int crime;
     private int library;
     private int walkability;
@@ -107,5 +113,9 @@ public class Tastes {
 
     public void setWork(int work) {
         this.work = work;
+    }
+
+    public void setId(Long id){
+        this.id = id;
     }
 }

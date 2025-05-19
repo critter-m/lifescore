@@ -14,6 +14,18 @@ public class MapsService {
         return coords;
     }
 
+    public String detectNeighborhood(){
+
+        String hood;
+
+        hood = "foxhall";
+
+
+        return hood;
+
+    }
+
+
     public boolean checkAddress(){
 
         return true;
