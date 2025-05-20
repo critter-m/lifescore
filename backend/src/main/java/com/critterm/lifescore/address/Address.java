@@ -1,7 +1,14 @@
 package com.critterm.lifescore.address;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import com.critterm.lifescore.services.MapsService;
+
+@Entity
 public class Address {
 
+    @Id
+    private Long id = 1L;
     private String address;
     private String neighborhood;
     private String city;
@@ -10,6 +17,18 @@ public class Address {
 
     public Address(String address) {
         this.address = address;
+        this.neighborhood = MapsService.detectNeighborhood(address);
+
+    }
+
+    public Address(String address, String workAddress) {
+        this.address = address;
+        this.neighborhood = MapsService.detectNeighborhood(address);
+        this.workAddress = workAddress;
+    }
+
+    public Address() {
+        this.address = "";
     }
 
     public String getAddress() {
@@ -50,5 +69,9 @@ public class Address {
 
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
+    }
+
+    public void setId(Long id){
+        this.id = id;
     }
 }

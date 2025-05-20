@@ -1,11 +1,12 @@
 package com.critterm.lifescore.services;
 
+import com.critterm.lifescore.address.Address;
 import org.springframework.stereotype.Service;
 
 @Service
 public class MapsService {
 
-    public String detectCoords(){
+    public static String detectCoords(String address){
 
         String coords;
 
@@ -14,15 +15,14 @@ public class MapsService {
         return coords;
     }
 
-    public String detectNeighborhood(){
-
-        String hood;
+    public static String detectNeighborhood(String address){
+        String coords = detectCoords(address);
+        String hood = coords + " st.";
 
         hood = "foxhall";
 
 
         return hood;
-
     }
 
 
