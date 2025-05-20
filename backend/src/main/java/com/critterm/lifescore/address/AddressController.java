@@ -28,13 +28,6 @@ public class AddressController {
 
     }
 
-    @GetMapping("/score")
-    public ResponseEntity<Integer> getScore() {
-        Address address = addressService.getAddress();
-        int score = address.getLifescore();
-        return ResponseEntity.ok(score);
-    }
-
     @GetMapping("/exists")
     public ResponseEntity<Boolean> checkAddressExists(@RequestParam String street, @RequestParam String city, @RequestParam String state, @RequestParam String zip) {
         boolean exists = mapsService.checkAddress(street, city, state, zip);

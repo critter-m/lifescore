@@ -16,13 +16,10 @@ public class Address {
     private String zipcode;
     private String workAddress;
 
-    @Column(nullable = true)
-    private Integer lifescore;
 
     public Address(String address) {
         this.address = address;
         this.neighborhood = MapsService.detectNeighborhood(address);
-        this.lifescore = 0;
 
     }
 
@@ -30,12 +27,10 @@ public class Address {
         this.address = address;
         this.neighborhood = MapsService.detectNeighborhood(address);
         this.workAddress = workAddress;
-        this.lifescore = 0;
     }
 
     public Address() {
         this.address = "";
-        this.lifescore = 0;
     }
 
     public String getAddress() {
@@ -54,9 +49,6 @@ public class Address {
         return zipcode;
     }
 
-    public Integer getLifescore(){
-        return lifescore;
-    }
 
     public void setAddress(String address) {
         this.address = address;
@@ -86,7 +78,4 @@ public class Address {
         this.id = id;
     }
 
-    public void setLifescore(Integer score){
-        this.lifescore = score;
-    }
 }

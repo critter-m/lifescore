@@ -2,12 +2,9 @@ package com.critterm.lifescore.tastes;
 
 import com.critterm.lifescore.address.Address;
 import com.critterm.lifescore.address.AddressService;
-import com.critterm.lifescore.services.ScoreService;
+import com.critterm.lifescore.results.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.awt.font.TextAttribute;
-import java.util.Optional;
 
 @Component
 public class TastesService {
@@ -28,8 +25,6 @@ public class TastesService {
 
     public Tastes updateTastes(Tastes updatedTastes){
         updatedTastes.setId(1L);
-        Address address = addressService.getAddress();
-        address.setLifescore(scoreService.getScore(address, updatedTastes));
         return tastesRepository.save(updatedTastes);
     }
 

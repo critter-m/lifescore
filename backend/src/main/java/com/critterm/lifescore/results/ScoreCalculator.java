@@ -1,7 +1,6 @@
-package com.critterm.lifescore.services;
+package com.critterm.lifescore.results;
 
 import com.critterm.lifescore.tastes.Tastes;
-import org.springframework.stereotype.Service;
 
 public class ScoreCalculator {
 
