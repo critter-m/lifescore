@@ -25,7 +25,17 @@ public class ScoreService {
         int schoolScore= mapsService.schoolScore(address.getAddress());
         double workDistance = mapsService.distanceToWork(address.getAddress(), address.getWorkAddress());
 
-       return ScoreCalculator.calculateScore(tastes, walkScore, crimeScore,groceryDistance,diningScore,gymDistance,nightlifeScore,schoolScore,workDistance );
+       return ScoreCalculator.calculateScore(
+               tastes,
+               walkScore,
+               crimeScore,
+               groceryDistance,
+               diningScore,
+               gymDistance,
+               nightlifeScore,
+               schoolScore,
+               workDistance
+       );
     }
 
 }

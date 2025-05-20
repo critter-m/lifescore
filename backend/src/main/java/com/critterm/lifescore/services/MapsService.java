@@ -26,9 +26,9 @@ public class MapsService {
     }
 
 
-    public boolean checkAddress(){
+    public boolean checkAddress(String street, String city, String state, String zip){
 
-        return true;
+        return false;
     }
 
     public double distanceToLibrary(String address){
